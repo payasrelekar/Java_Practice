@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body style="background-color: gray;">
-	<form action="" method="post">
+	<form action="implicitObjectsDemo.jsp" method="post">
 		<label>FirstName</label> <input type="text" name="uname"> <label>LastName</label>
 		<input type="password" name="password"> <input type="submit"
 			name="Submit" value="Submit">
