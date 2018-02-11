@@ -18,9 +18,6 @@
 			out.print("username is :" + name);
 		%>
 		<input type="submit" name="Go" value="Go">
-
-
-
 	</form>
 </body>
 </html>
