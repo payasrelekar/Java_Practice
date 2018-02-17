@@ -3,12 +3,14 @@ package com.bbspvtltd;
 public class U2 extends Rocket {
 
 	@Override
-	public boolean land(Item item) {
-		return super.land(item);
+	public boolean land() {
+		// TODO Auto-generated method stub
+		return super.land();
 	}
 
 	@Override
 	public boolean launch() {
+		// TODO Auto-generated method stub
 		return super.launch();
 	}
 }
