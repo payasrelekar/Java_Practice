@@ -1,7 +1,6 @@
 package com.bbspvtltd;
 
 public interface SpaceShip {
-
 	/*
 	 * a method that returns either true or false indicating if the launch was
 	 * successful or if the rocket has crashed.
