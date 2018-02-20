@@ -14,8 +14,7 @@ public class Simulation {
 	File f3 = new File("Phase-2.txt");
 	FileInputStream fin = null;
 
-	public ArrayList<Item> loadItems(File f) throws IOException {
-		
+	public ArrayList<Item> loadItems() throws IOException {
 		item = new ArrayList<>();
 		Scanner sc = new Scanner(f2);
 		while (sc.hasNext()) {
@@ -25,7 +24,6 @@ public class Simulation {
 				int weight1 = Integer.parseInt(readData[1]);
 				item.add(new Item(tool, weight1));
 			}
-
 		}
 
 		sc.close();
