@@ -1,5 +1,7 @@
 package com.bbspvtltd;
 
+import java.lang.Math;
+
 public class U1 extends Rocket {
 	private final int cost = 100000000;
 	private int weight = 100000;
@@ -7,7 +9,10 @@ public class U1 extends Rocket {
 	
 	@Override
 	public boolean land() {
-		return super.land();
+		
+		double chance = 0.05 * (super.getPresentWeight() / maxCargoWeight);
+		
+		return Math.random() >= chance;
 	}
 
 	@Override
