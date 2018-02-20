@@ -10,13 +10,16 @@ public class U1 extends Rocket {
 	@Override
 	public boolean land() {
 		
-		double chance = 0.05 * (super.getPresentWeight() / maxCargoWeight);
+		double chance = 0.05 * (getPresentWeight() / maxCargoWeight);
 		
 		return Math.random() >= chance;
 	}
 
 	@Override
 	public boolean launch() {
-		return super.launch();
+		
+		double chance = 0.01 * (getPresentWeight() / maxCargoWeight);
+		
+		return Math.random() >= chance;
 	}
 }
