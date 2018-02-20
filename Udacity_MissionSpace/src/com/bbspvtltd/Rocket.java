@@ -66,7 +66,7 @@ public class Rocket implements SpaceShip {
 	// Override Methods
 	@Override
 	public boolean land() {
-		return false;
+		return true;
 	}
 
 	@Override
