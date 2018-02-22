@@ -55,7 +55,8 @@ public class Simulation {
 				count++;
 
 				/*
-				 * Check if a new rocket can carry item, if NOT, return current list if YES,
+				 * Check if a new rocket can carry item,
+				 * if NOT, return current list if YES,
 				 * create new rocket object, and add item to it
 				 */
 				if (rockMap.put("rock" + count, new U1()).canCarry(item)) {
@@ -71,8 +72,8 @@ public class Simulation {
 	}
 
 	/*
-	 * Create and load U2 rockets with items that they can carry, and return the
-	 * list of rockets
+	 * Create and load U2 rockets with items that they can carry, 
+	 * and return the list of rockets
 	 */
 	public ArrayList<U2> loadU2(ArrayList<Item> items) {
 
