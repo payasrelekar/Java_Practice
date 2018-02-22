@@ -6,12 +6,6 @@ public class Item {
 	private String name;
 	private int weight;
 
-	// Default Constructor
-	public Item() {
-		name = "U1";
-		weight = 18;
-	}
-
 	// Parameterized constructor
 	public Item(String name, int weight) {
 		this.name = name;
@@ -23,16 +17,8 @@ public class Item {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public int getWeight() {
 		return weight;
-	}
-
-	public void setWeight(int weight) {
-		this.weight = weight;
 	}
 
 	// To String Method

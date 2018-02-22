@@ -1,28 +1,28 @@
 package com.bbspvtltd;
 
-public class U2 extends Rocket {
-	
-	private final int cost = 120000000;
-	private int weight = 18000;
-	private int maxCargoWeight = 11000;
+import com.bbspvtltd.Item;
 
-	@Override
-	public boolean land() {
-		if(getPresentWeight() > maxCargoWeight)
-			return false;
-		else {
-			double chance = 0.08 * (getPresentWeight() / maxCargoWeight);
-			return Math.random() >= chance;
-		}
+public class U2 extends Rocket {
+
+	public U2() {
+		super(120000000, 11000);
 	}
 
 	@Override
-	public boolean launch() {
-		if(getPresentWeight() > maxCargoWeight)
-			return false;
-		else {
-			double chance = 0.04 * (getPresentWeight() / maxCargoWeight);
+	public boolean launch(Item item) {
+		if (canCarry(item)) {
+			double chance = 0.04 * (getPresentWeight() / this.getMaxCargoWeight());
 			return Math.random() >= chance;
-		}
+		} else
+			return false;
+	}
+
+	@Override
+	public boolean land(Item item) {
+		if (canCarry(item)) {
+			double chance = 0.08 * (getPresentWeight() / this.getMaxCargoWeight());
+			return Math.random() >= chance;
+		} else
+			return false;
 	}
 }
