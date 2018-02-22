@@ -12,18 +12,20 @@ public class U1 extends Rocket {
 	@Override
 	public boolean launch(Item item) {
 		if (canCarry(item)) {
-			double chance = 0.05 * (getPresentWeight() / this.getMaxCargoWeight());
+			double chance = 0.05 * (this.getPresentWeight() / this.getMaxCargoWeight());
 			return Math.random() >= chance;
-		} else
+		}
+		else
 			return false;
 	}
 
 	@Override
 	public boolean land(Item item) {
 		if (canCarry(item)) {
-			double chance = 0.01 * (getPresentWeight() / this.getMaxCargoWeight());
+			double chance = 0.01 * (this.getPresentWeight() / this.getMaxCargoWeight());
 			return Math.random() >= chance;
-		} else
+		}
+		else
 			return false;
 	}
 }
