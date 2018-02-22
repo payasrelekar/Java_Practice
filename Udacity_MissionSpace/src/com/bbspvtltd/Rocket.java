@@ -15,10 +15,6 @@ public class Rocket implements SpaceShip {
 		return presentWeight;
 	}
 
-	public void setPresentWeight(int presentWeight) {
-		this.presentWeight = presentWeight;
-	}
-
 	public int getMaxCargoWeight() {
 		return maxCargoWeight;
 	}
