@@ -115,13 +115,16 @@ public class Simulation {
 		return rocketList;
 	}
 
-	public static void main(String[] args) {
-		Simulation s = new Simulation();
-		try {
-			s.loadItems();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+	public int runSimulation (ArrayList<Rocket> rockets) {
+		int budget = 0;
+		
+		for (Rocket rocket : rockets) {
+			// Keep adding cost to budget for every rocket that fails to launch or land
+			while(!(rocket.launch() && rocket.land()))
+				budget = budget + rocket.getCost();
+			budget = budget + rocket.getCost();
 		}
+		
+		return budget;
 	}
 }
