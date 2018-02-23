@@ -11,7 +11,6 @@ import java.util.Scanner;
 public class Simulation {
 
 	ArrayList<Item> item = null;
-	// File f1 = new File("load.txt");
 	File f2 = new File("Phase-1.txt");
 	File f3 = new File("Phase-2.txt");
 	FileInputStream fin = null;
@@ -30,10 +29,10 @@ public class Simulation {
 		return item;
 	}
 
-	public ArrayList<U1> loadU1(ArrayList<Item> items) {
+	public ArrayList<Rocket> loadU1(ArrayList<Item> items) {
 		
 		// List of rockets that might be required
-		ArrayList<U1> rocketList = new ArrayList<U1>();
+		ArrayList<Rocket> rocketList = new ArrayList<Rocket>();
 
 		// Count and map for dynamically created rockets
 		int count = 1;
@@ -75,10 +74,10 @@ public class Simulation {
 	 * Create and load U2 rockets with items that they can carry, 
 	 * and return the list of rockets
 	 */
-	public ArrayList<U2> loadU2(ArrayList<Item> items) {
+	public ArrayList<Rocket> loadU2(ArrayList<Item> items) {
 
 		// List of rockets that might be required
-		ArrayList<U2> rocketList = new ArrayList<U2>();
+		ArrayList<Rocket> rocketList = new ArrayList<Rocket>();
 
 		// Count and map for dynamically created rockets
 		int count = 1;
