@@ -1,8 +1,5 @@
 package com.bbspvtltd;
 
-import java.lang.Math;
-import com.bbspvtltd.Item;
-
 public class U1 extends Rocket {
 
 	public U1() {

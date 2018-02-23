@@ -1,7 +1,5 @@
 package com.bbspvtltd;
 
-import com.bbspvtltd.Item;
-
 public class U2 extends Rocket {
 
 	public U2() {
