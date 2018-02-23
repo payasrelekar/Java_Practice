@@ -9,20 +9,14 @@ public class U2 extends Rocket {
 	}
 
 	@Override
-	public boolean launch(Item item) {
-		if (canCarry(item)) {
-			double chance = 0.04 * (getPresentWeight() / this.getMaxCargoWeight());
-			return Math.random() >= chance;
-		} else
-			return false;
+	public boolean launch() {
+		double chance = 0.04 * (getPresentWeight() / this.getMaxCargoWeight());
+		return Math.random() >= chance;
 	}
 
 	@Override
-	public boolean land(Item item) {
-		if (canCarry(item)) {
-			double chance = 0.08 * (getPresentWeight() / this.getMaxCargoWeight());
-			return Math.random() >= chance;
-		} else
-			return false;
+	public boolean land() {
+		double chance = 0.08 * (getPresentWeight() / this.getMaxCargoWeight());
+		return Math.random() >= chance;
 	}
 }

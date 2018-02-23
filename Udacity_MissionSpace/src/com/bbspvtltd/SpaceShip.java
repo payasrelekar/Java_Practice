@@ -5,13 +5,13 @@ public interface SpaceShip {
 	 * a method that returns either true or false indicating if the launch was
 	 * successful or if the rocket has crashed.
 	 */
-	public boolean launch(Item item);
+	public boolean launch();
 
 	/*
 	 * a method that also returns either true or false based on the success of the
 	 * landing.
 	 */
-	public boolean land(Item item);
+	public boolean land();
 
 	/*
 	 * a method that takes an Item as an argument and returns true if the rocket can

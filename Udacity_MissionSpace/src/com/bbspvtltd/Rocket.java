@@ -27,12 +27,12 @@ public class Rocket implements SpaceShip {
 
 	// Override Methods
 	@Override
-	public boolean land(Item item) {
+	public boolean land() {
 		return true;
 	}
 
 	@Override
-	public boolean launch(Item item) {
+	public boolean launch() {
 		return true;
 	}
 
