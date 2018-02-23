@@ -4,19 +4,12 @@ public class Rocket implements SpaceShip {
 
 	private int cost;
 	// present weight of items on rocket
-	private int presentWeight = 0;
-	private int maxCargoWeight;
+	protected int presentWeight = 0;
+	// Maximum cargo the rocket can carry
+	protected int maxCargoWeight;
 
 	public int getCost() {
 		return cost;
-	}
-
-	public int getPresentWeight() {
-		return presentWeight;
-	}
-
-	public int getMaxCargoWeight() {
-		return maxCargoWeight;
 	}
 
 	// Parameterized Constructor
