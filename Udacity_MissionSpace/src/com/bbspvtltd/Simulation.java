@@ -50,6 +50,12 @@ public class Simulation {
 
 		// Iterate over item list
 		for (Item item : items) {
+			
+			// DEBUG
+			System.out.println(item);
+			// DEBUG
+			System.out.println(rocketList.get(count));
+			
 
 			// Check if rocket can carry item
 			if (rocketList.get(count).canCarry(item)) {
@@ -65,12 +71,13 @@ public class Simulation {
 				 * if NOT, return current list if YES,
 				 * create new rocket object, and add item to it
 				 */
-				if (rockMap.put("rock" + count, new U1()).canCarry(item)) {
+//				if (rockMap.put("rock" + count, new U1()).canCarry(item)) {
+					rockMap.put("rock" + count, new U1());
 					rocketList.add(rockMap.get("rock" + count));
 					rocketList.get(count).carry(item);
-				}
-				else
-					return rocketList;
+//				}
+//				else
+//					return rocketList;
 			}
 		}
 
@@ -87,7 +94,7 @@ public class Simulation {
 		ArrayList<Rocket> rocketList = new ArrayList<Rocket>();
 
 		// Count and map for dynamically created rockets
-		int count = 1;
+		int count = 0;
 		Map<String, U2> rockMap = new HashMap<String, U2>();
 		rockMap.put("rock" + count, new U2());
 		// Add first rocket to list
@@ -106,15 +113,11 @@ public class Simulation {
 				count++;
 
 				/*
-				 * Check if a new rocket can carry item, if NOT, return current list if YES,
 				 * create new rocket object, and add item to it
 				 */
-				if (rockMap.put("rock" + count, new U2()).canCarry(item)) {
-					rocketList.add(rockMap.get("rock" + count));
-					rocketList.get(count).carry(item);
-				}
-				else
-					return rocketList;
+				rockMap.put("rock" + count, new U2());
+				rocketList.add(rockMap.get("rock" + count));
+				rocketList.get(count).carry(item);
 			}
 		}
 
