@@ -30,7 +30,7 @@ public class Simulation {
 	}
 
 	public ArrayList<Rocket> loadU1(ArrayList<Item> items) {
-		
+
 		// List of rockets that might be required
 		ArrayList<Rocket> rocketList = new ArrayList<Rocket>();
 
@@ -38,10 +38,10 @@ public class Simulation {
 		int count = 0;
 		Map<String, U1> rockMap = new HashMap<String, U1>();
 		rockMap.put("rock" + count, new U1());
-		
+
 		// DEBUG , OKko
 		System.out.println(rockMap.get("rock" + count));
-		
+
 		// Add first rocket to list
 		rocketList.add(rockMap.get("rock" + count));
 
@@ -50,34 +50,29 @@ public class Simulation {
 
 		// Iterate over item list
 		for (Item item : items) {
-			
-			// DEBUG
-			System.out.println(item);
-			// DEBUG
-			System.out.println(rocketList.get(count));
-			
 
-			// Check if rocket can carry item
-			if (rocketList.get(count).canCarry(item)) {
-				// Add item to rocket
-				rocketList.get(count).carry(item);
+			int i = -1;
+
+			for (Rocket rocket : rocketList) {
+				// Check if rocket can carry item
+				if (rocket.canCarry(item)) {
+					// Add item to rocket
+					rocket.carry(item);
+					break;
+				}
+				i++;
 			}
-			else {
+
+			if (i >= count) {
 				// Increase count for creating next rocket object
 				count++;
 
 				/*
-				 * Check if a new rocket can carry item,
-				 * if NOT, return current list if YES,
 				 * create new rocket object, and add item to it
 				 */
-//				if (rockMap.put("rock" + count, new U1()).canCarry(item)) {
-					rockMap.put("rock" + count, new U1());
-					rocketList.add(rockMap.get("rock" + count));
-					rocketList.get(count).carry(item);
-//				}
-//				else
-//					return rocketList;
+				rockMap.put("rock" + count, new U1());
+				rocketList.add(rockMap.get("rock" + count));
+				rocketList.get(count).carry(item);
 			}
 		}
 
@@ -85,8 +80,8 @@ public class Simulation {
 	}
 
 	/*
-	 * Create and load U2 rockets with items that they can carry, 
-	 * and return the list of rockets
+	 * Create and load U2 rockets with items that they can carry, and return the
+	 * list of rockets
 	 */
 	public ArrayList<Rocket> loadU2(ArrayList<Item> items) {
 
@@ -103,12 +98,19 @@ public class Simulation {
 		// Iterate over item list
 		for (Item item : items) {
 
-			// Check if rocket can carry item
-			if (rocketList.get(count).canCarry(item)) {
-				// Add item to rocket
-				rocketList.get(count).carry(item);
+			int i = -1;
+
+			for (Rocket rocket : rocketList) {
+				// Check if rocket can carry item
+				if (rocket.canCarry(item)) {
+					// Add item to rocket
+					rocket.carry(item);
+					break;
+				}
+				i++;
 			}
-			else {
+
+			if (i == count) {
 				// Increase count for creating next rocket object
 				count++;
 
@@ -124,16 +126,16 @@ public class Simulation {
 		return rocketList;
 	}
 
-	public int runSimulation (ArrayList<Rocket> rockets) {
+	public int runSimulation(ArrayList<Rocket> rockets) {
 		int budget = 0;
-		
+
 		for (Rocket rocket : rockets) {
 			// Keep adding cost to budget for every rocket that fails to launch or land
-			while(!(rocket.launch() && rocket.land()))
+			while (!(rocket.launch() && rocket.land()))
 				budget = budget + rocket.getCost();
 			budget = budget + rocket.getCost();
 		}
-		
+
 		return budget;
 	}
 }
