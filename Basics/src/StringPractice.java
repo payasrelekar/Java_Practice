@@ -86,7 +86,21 @@ public class StringPractice {
         if(sp2.equals(sp3)) {
             System.out.println("sp1.equals(sp2)");
         }
+
+        Double x = new Double("42.0");
+        Double y = new Double(24.0);
     }
 
+    public static boolean m(int i) {
+        return true;
+    }
+
+    public  static boolean m(int i, int j) {
+        return false;
+    }
+
+    public static int m(int i, String s) {
+        return i+1;
+    }
 
 }
